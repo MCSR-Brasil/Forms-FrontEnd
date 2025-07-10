@@ -13,11 +13,39 @@ form.addEventListener('submit', e => {
   submitBtn.style.cursor = 'wait';
   msg.textContent = '';
   
-  const data = new FormData(form);
+  // Get all form data
+  const formData = new FormData(form);
+  
+  // Convert FormData to object, properly handling multiple values
+  const formDataObj = {};
+  for (const [key, value] of formData.entries()) {
+    if (formDataObj[key] === undefined) {
+      formDataObj[key] = value;
+    } else {
+      // If the key already exists, convert to array or push to existing array
+      formDataObj[key] = Array.isArray(formDataObj[key])
+        ? [...formDataObj[key], value]
+        : [formDataObj[key], value];
+    }
+  }
+  
+  // Log form data to console
+  console.log('Submitting form data:', formDataObj);
+  
+  // Convert form data to URLSearchParams, combining multiple values with commas
+  const params = new URLSearchParams();
+  Object.entries(formDataObj).forEach(([key, value]) => {
+    if (Array.isArray(value)) {
+      // Join array values with commas for better compatibility with Google sheets
+      params.append(key, value.join(','));
+    } else {
+      params.append(key, value);
+    }
+  });
   
   fetch(url, {
     method: 'POST',
-    body: new URLSearchParams(data)
+    body: params
   })
   .then(r => r.json())
   .then(res => {
