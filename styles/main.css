@@ -32,9 +32,6 @@ body {
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
   background-color: #121212;
-  background-image: 
-    linear-gradient(rgba(30, 30, 30, 0.9), rgba(10, 10, 10, 0.9)),
-    url('https://i.imgur.com/1QZJkYq.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
