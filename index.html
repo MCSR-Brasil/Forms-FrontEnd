@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCSR Tournament Registration</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <form id="myForm">
+      <h2>Teste de forms</h2>
+      <p class="subtitle">Testando um sistema de fazer forms, usa o backend do google, mas o front-end completamente feito por mim.</p>
+      
+      <div class="form-group">
+        <label for="name">Qual seu discord?</label>
+        <div class="description">Preciso do seu discord.</div>
+        <input type="text" id="name" name="name" autocomplete="off" autofill="off" placeholder="Enter your full name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="twitch">Qual sua twitch?</label>
+        <div class="description">Preciso do seu nome da twitch.</div>
+        <input type="text" id="twitch" name="twitch" autocomplete="off" autofill="off" placeholder="minecraftspeedrunbrasil" required>
+      </div>
+
+      <div class="form-group">
+        <label for="text1">O que você pensa sobre</label>
+        <div class="description">Por favor, compartilhe sua opinião sobre o assunto em questão.</div>
+        <input type="text" id="text1" name="text1" autocomplete="off" autofill="off" placeholder="Sua opinião" required>
+      </div>
+      
+      <button type="submit">Enviar</button>
+    </form>
+    
+    <div class="message" id="msg"></div>
+  </div>
+
+  <script src="scripts/form.js"></script>
+</body>
+</html>
