@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MCSR Tournament Registration</title>
+  <link rel="shortcut icon" href="image/icon.ico">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/inputs.css">
   <link rel="stylesheet" href="styles/submit.css">
@@ -13,67 +14,20 @@
   <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <form id="myForm">
-      <h2>Teste de forms</h2>
-      <p class="subtitle">Testando um sistema de fazer forms, usa o backend do google, mas o front-end completamente feito por mim.</p>
+  <div class="container" >
+    <form id="form-container">
       
-    <div class="form-group">
-        <label for="name">Qual seu discord?</label>
-        <div class="description">Preciso do seu discord.</div>
-        <input type="text" id="name" name="name" autocomplete="off" autofill="off" placeholder="Enter your full name" required>
-    </div>
-    
-    <div class="form-group">
-        <label for="twitch">Qual sua twitch?</label>
-        <div class="description">Preciso do seu nome da twitch.</div>
-        <input type="text" id="twitch" name="twitch" autocomplete="off" autofill="off" placeholder="minecraftspeedrunbrasil" required>
-    </div>
-
-    <div class="form-group">
-        <label for="text1">O que você pensa sobre</label>
-        <div class="description">Por favor, compartilhe sua opinião sobre o assunto em questão.</div>
-        <textarea id="text1" name="text1" autocomplete="off" autofill="off" placeholder="Sua opinião" required></textarea>
-    </div>
-
-    <div class="form-group">
-        <label>Quais modos de jogo você gosta?</label>
-        <div class="description">Selecione todas as opções que desejar (múltipla escolha)</div>
-        <div class="multi-select">
-            <label class="multi-select-option">
-                <input type="checkbox" name="game_modes[]" value="speedrun">
-                <span class="checkmark"></span>
-                Speedrun
-            </label>
-            <label class="multi-select-option">
-                <input type="checkbox" name="game_modes[]" value="pvp">
-                <span class="checkmark"></span>
-                PvP
-            </label>
-            <label class="multi-select-option">
-                <input type="checkbox" name="game_modes[]" value="survival">
-                <span class="checkmark"></span>
-                Survival
-            </label>
-            <label class="multi-select-option">
-                <input type="checkbox" name="game_modes[]" value="creative">
-                <span class="checkmark"></span>
-                Creative
-            </label>
-            <label class="multi-select-option">
-                <input type="checkbox" name="game_modes[]" value="hardcore">
-                <span class="checkmark"></span>
-                Hardcore
-            </label>
-        </div>
-    </div>
-      
-    <button type="submit">Enviar</button>
     </form>
-    
     <div class="message" id="msg"></div>
   </div>
 
-  <script src="scripts/form.js"></script>
+  <script src="scripts/main.js"></script>
+  <script src="scripts/utils/getConfig.js"></script>
+  <script src="scripts/utils/postAnswer.js"></script>
+  <script src="scripts/components/checkbox.js"></script>
+  <script src="scripts/components/submit.js"></script>
+  <script src="scripts/components/text.js"></script>
+  <script src="scripts/components/textarea.js"></script>
+  <script src="scripts/components/title.js"></script>
 </body>
 </html>
