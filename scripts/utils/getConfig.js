@@ -38,7 +38,8 @@ function formatConfig(configArray = []) {
             text: () => text(props),
             textarea: () => textarea(props),
             checkmark: () => CheckboxGroup(props),
-            submit: () => submit({ label: item.title, note: item.subtitle })
+            submit: () => submit({ label: item.title, note: item.subtitle }),
+            section: () => section(props)
         };
         
         return componentMap[item.type]?.() || '';

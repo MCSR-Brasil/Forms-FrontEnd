@@ -45,6 +45,40 @@ input[type="link"]::placeholder {
   opacity: 0.5;
 }
 
+.section-title,
+.section-description,
+.section-footnote {
+  margin-bottom: 1rem;
+}
+
+.section {
+  padding: 1rem;
+  background: rgba(30, 30, 30, 0.6);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.section-description {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #dfdfdf;
+}
+
+.section-footnote {
+  font-size: 1rem;
+  text-align: center;
+  color: #cecece;
+}
+
 /* Multi-select styles */
 .multi-select {
   background: rgba(30, 30, 30, 0.6);
