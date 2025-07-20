@@ -67,7 +67,7 @@ function submit(props) {
     return `
         <div class="form-group" id="${id}" name="${name}">
             <button type="submit" id="${id}">${label}</button>
-            ${note ? `<div class="note">${note}</div>` : ''}
+            ${note ? `<div class="note"><p class="note-text">${note}</p></div>` : ''}
         </div>
     `;
 }

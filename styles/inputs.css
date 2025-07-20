@@ -39,6 +39,12 @@ input[type="link"]::placeholder {
   opacity: 0.7;
 }
 
+.note-text {
+  padding-top: 0.5rem;
+  color: #ffffff;
+  opacity: 0.5;
+}
+
 /* Multi-select styles */
 .multi-select {
   background: rgba(30, 30, 30, 0.6);
