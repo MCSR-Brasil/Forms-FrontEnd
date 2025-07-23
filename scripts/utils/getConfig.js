@@ -1,6 +1,6 @@
 async function fetchConfig() {
     const url = 'https://script.google.com/macros/s/AKfycbzodZXAXW0FFhY6Onlf08y3FWitHitTPUbCkUeTmKy51Kp3pLUkQqZbI7rd0Zy_S34r/exec?action=config';
-    try {
+    try { //https://script.google.com/macros/s/AKfycbzodZXAXW0FFhY6Onlf08y3FWitHitTPUbCkUeTmKy51Kp3pLUkQqZbI7rd0Zy_S34r/exec?action=config
         const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         return await response.json();
@@ -10,13 +10,14 @@ async function fetchConfig() {
     }
 }
 
-function renderForm(html, containerSelector = '#myForm') {
+function renderForm(html, containerSelector = '#myForm', title) {
     const container = document.querySelector(containerSelector);
     if (!container) {
         console.warn(`Container "${containerSelector}" not found`);
         return false;
     }
     container.innerHTML = html;
+    document.title = title;
     return true;
 }
 
@@ -46,6 +47,15 @@ function formatConfig(configArray = []) {
     }).join('\n');
 }
 
+function getWebsiteConfig(configArray = []) {
+    if (!Array.isArray(configArray) || !configArray.length) return '';
+
+    const websiteTitle = configArray.find(item => item.websiteTitle)?.websiteTitle || 'MCSR Form';
+    
+    return websiteTitle;
+}
+    
+
 /**
  * Initializes the form by fetching config and rendering it
  * @param {string} containerSelector - CSS selector for the form container
@@ -55,7 +65,8 @@ async function initForm(containerSelector = '#myForm') {
     try {
         const config = await fetchConfig();
         const html = formatConfig(config.config || []);
-        return renderForm(html, containerSelector);
+        const title = getWebsiteConfig(config.config);
+        return renderForm(html, containerSelector, title);
     } catch (error) {
         console.error('Failed to initialize form:', error);
         return false;
