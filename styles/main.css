@@ -177,6 +177,17 @@ h2::after {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
+#loading {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+#loading p {
+  font-family: 'Minecraft', 'Inter', sans-serif;
+  color: var(--text-primary);
+  font-size: 4.5rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   #form-container {

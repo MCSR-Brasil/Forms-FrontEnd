@@ -66,6 +66,7 @@ async function initForm(containerSelector = '#myForm') {
         const config = await fetchConfig();
         const html = formatConfig(config.config || []);
         const title = getWebsiteConfig(config.config);
+        document.getElementById('loading').style.display = 'none';
         return renderForm(html, containerSelector, title);
     } catch (error) {
         console.error('Failed to initialize form:', error);
